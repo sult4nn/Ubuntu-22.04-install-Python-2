@@ -1,67 +1,67 @@
-# Cara Mengaktifkan Python 2 di Ubuntu 22.04
+# How to Enable Python 2 on Ubuntu 22.04
 
-Python 2 sudah deprecated dan tidak lagi didukung secara resmi di Ubuntu 22.04. 
-Namun, jika tetap ingin menggunakannya, ikuti langkah-langkah berikut:
+Python 2 is deprecated and no longer officially supported on Ubuntu 22.04.  
+However, if you still want to use it, follow these steps:
 
-## 1. Perbarui Repository
-Jalankan perintah berikut untuk memastikan sistem diperbarui:
+## 1. Update Repository
+Run the following command to ensure your system is updated:
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
 
 ## 2. Install Python 2
-Karena Python 2 tidak lagi tersedia secara default, kita bisa menginstalnya dengan:
+Since Python 2 is no longer available by default, you can install it with:
 ```bash
 sudo apt install python2 -y
 ```
 
-## 3. Verifikasi Instalasi
-Setelah instalasi selesai, periksa apakah Python 2 telah terpasang:
+## 3. Verify Installation
+Once the installation is complete, check if Python 2 is installed:
 ```bash
 python2 --version
 ```
-Jika berhasil, akan muncul output seperti:
+If successful, you should see output like:
 ```
 Python 2.7.X
 ```
 
-## 4. Install pip untuk Python 2
-Paket `python2-pip` sudah tidak tersedia, jadi kita harus menginstalnya secara manual:
+## 4. Install pip for Python 2
+The `python2-pip` package is no longer available, so we need to install it manually:
 ```bash
 curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
 python2 get-pip.py
 ```
 
-## 5. Pastikan pip dapat digunakan
-Setelah instalasi selesai, verifikasi dengan:
+## 5. Ensure pip is Usable
+After installation, verify with:
 ```bash
 python2 -m pip --version
 ```
-Jika berhasil, akan muncul:
+If successful, you should see:
 ```
 pip 20.3.4 from /usr/local/lib/python2.7/site-packages/pip (python 2.7)
 ```
 
-## 6. (Opsional) Tambahkan pip ke PATH
-Jika `pip2` tidak dikenali, tambahkan ke PATH dengan:
-``` bash  
+## 6. (Optional) Add pip to PATH
+If `pip2` is not recognized, add it to the PATH with:
+```bash  
 export PATH=$HOME/.local/bin:$PATH
 ```
-Untuk membuatnya permanen, tambahkan perintah di atas ke `~/.bashrc` atau `~/.bash_profile`.
+To make it permanent, add the above command to `~/.bashrc` or `~/.bash_profile`.
 
-## 7. Menggunakan Python 2 secara Default (Opsional)
-Jika ingin menjalankan `python` langsung tanpa `python2`, gunakan alias:
+## 7. Using Python 2 as Default (Optional)
+If you want to run `python` directly without `python2`, use an alias:
 ```bash
 alias python=python2
 ```
-Untuk menjadikannya permanen:
+To make it permanent:
 ```bash
 echo "alias python=python2" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-Dengan langkah-langkah ini, Python 2 bisa berjalan di Ubuntu 22.04 meskipun tidak lagi didukung secara resmi.
+With these steps, Python 2 can run on Ubuntu 22.04 even though it is no longer officially supported.
 
-# Catatan:
-- Python 2 sudah usang dan tidak disarankan untuk digunakan.
-- Gunakan Python 3 jika memungkinkan, karena memiliki dukungan penuh.
+# Notes:
+- Python 2 is outdated and not recommended for use.
+- Use Python 3 whenever possible, as it has full support.
